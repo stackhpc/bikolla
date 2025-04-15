@@ -3,6 +3,18 @@
 [control]
 localhost ansible_host=127.0.0.1
 
+[common:children]
+control
+
+[cron:children]
+common
+
+[kolla-logs:children]
+common
+
+[kolla-toolbox:children]
+common
+
 [baremetal:children]
 control
 
