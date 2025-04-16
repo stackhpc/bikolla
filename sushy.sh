@@ -5,7 +5,7 @@
 set -e
 
 sudo dnf config-manager --enable devel
-sudo dnf -y install libvirt qemu-kvm libvirt-devel
+sudo dnf -y install libvirt qemu-kvm libvirt-devel virt-install
 python3 -m venv sushy-venv
 pip install libvirt-python sushy-tools
 source sushy-venv/bin/activate
