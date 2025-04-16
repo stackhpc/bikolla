@@ -15,6 +15,9 @@ common
 [kolla-toolbox:children]
 common
 
+[fluentd:children]
+common
+
 [baremetal:children]
 control
 
