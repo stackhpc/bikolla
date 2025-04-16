@@ -11,6 +11,7 @@ pip install libvirt-python sushy-tools
 source sushy-venv/bin/activate
 
 sudo usermod -aG libvirt $USER
+sudo systemctl enable --now virtqemud
 
 tmpfile=$(mktemp /tmp/sushy-domain.XXXXXX)
 virt-install \
