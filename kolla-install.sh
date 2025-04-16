@@ -30,8 +30,8 @@ source kolla-venv/bin/activate
 pip install -U pip
 pip install -U setuptools
 pip install ./kolla-ansible
-ansible-galaxy install -r ./kolla-ansible/requirements.yml
 pip install ansible docker dbus-python
+ansible-galaxy install -r ./kolla-ansible/requirements.yml
 
 sudo mkdir -p /etc/kolla
 sudo chown $USER: -R /etc/kolla/
