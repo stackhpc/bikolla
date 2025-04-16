@@ -38,11 +38,11 @@ sudo chown $USER: -R /etc/kolla/
 cp -r etc/kolla/* /etc/kolla/
 mkdir -p /etc/kolla/config/ironic
 
-if [[ ! -d /etc/kolla/config/ironic/ironic-agent.initramfs ]]
-wget -O /etc/kolla/config/ironic/ironic-agent.initramfs https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.gz
+if [[ ! -d /etc/kolla/config/ironic/ironic-agent.initramfs ]]; then
+  wget -O /etc/kolla/config/ironic/ironic-agent.initramfs https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.gz
 fi
-if [[ ! -d /etc/kolla/config/ironic/ironic-agent.kernel ]]
-wget -O /etc/kolla/config/ironic/ironic-agent.kernel https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.vmlinuz
+if [[ ! -d /etc/kolla/config/ironic/ironic-agent.kernel ]]; then
+  wget -O /etc/kolla/config/ironic/ironic-agent.kernel https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.vmlinuz
 fi
 
 if [[ ! -e /etc/kolla/passwords.yml ]]; then
