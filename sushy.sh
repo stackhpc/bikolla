@@ -13,6 +13,7 @@ source sushy-venv/bin/activate
 sudo usermod -aG libvirt $USER
 sudo systemctl enable --now virtqemud
 sudo systemctl enable --now virtstoraged
+sudo systemctl enable --now virtnetworkd
 
 tmpfile=$(mktemp /tmp/sushy-domain.XXXXXX)
 sudo virt-install \
