@@ -28,4 +28,4 @@ sudo virt-install \
 sudo virsh define --file $tmpfile
 rm $tmpfile
 
-sushy-emulator -i 192.168.33.3
+sushy-emulator -i 192.168.33.3 --config ~/bikolla/sushy.conf

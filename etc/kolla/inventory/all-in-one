@@ -30,6 +30,9 @@ control
 [ironic:children]
 control
 
+[keystone:children]
+control
+
 # iSCSI
 [iscsid:children]
 ironic
@@ -42,7 +45,6 @@ ironic
 ironic
 
 [ironic-inspector:children]
-ironic
 
 [ironic-tftp:children]
 ironic

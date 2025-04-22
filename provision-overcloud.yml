@@ -1,0 +1,24 @@
+- name: Provision overcloud
+  hosts: localhost
+  tasks:
+    - openstack.cloud.baremetal_node_action:
+        name: "test-vm"
+        config_drive:
+          meta_data:
+            hostname: node1
+          network_data:
+            links:
+              - id: port-
+                type: phy
+                ethernet_mac_address:
+            networks:
+              - id: network0
+                type: ipv4
+                link: port-
+                ip_address: "192.168.122.42"
+                netmask: "255.255.255.0"
+                network_id: network0
+        instance_info:
+          image_source: "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
+          image_checksum: "989151e612cde6876b0ef9fbc8051c0e22c32c59dd51cbac2b8691fbb79c399a"
+          image_disk_format: "qcow2"
