@@ -23,7 +23,7 @@ fi
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
 
 if [[ ! -d ./kolla-ansible ]]; then
-  git clone https://github.com/openstack/kolla-ansible -b stable/2024.1
+  git clone https://github.com/openstack/kolla-ansible -b master
 fi
 python3 -m venv kolla-venv
 source kolla-venv/bin/activate
@@ -38,10 +38,10 @@ sudo chown $USER: -R /etc/kolla/
 cp -r etc/kolla/* /etc/kolla/
 mkdir -p /etc/kolla/config/ironic
 
-if [[ ! -d /etc/kolla/config/ironic/ironic-agent.initramfs ]]; then
+if [[ ! -e /etc/kolla/config/ironic/ironic-agent.initramfs ]]; then
   wget -O /etc/kolla/config/ironic/ironic-agent.initramfs https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.gz
 fi
-if [[ ! -d /etc/kolla/config/ironic/ironic-agent.kernel ]]; then
+if [[ ! -e /etc/kolla/config/ironic/ironic-agent.kernel ]]; then
   wget -O /etc/kolla/config/ironic/ironic-agent.kernel https://tarballs.openstack.org/ironic-python-agent/tinyipa/files/tinyipa-master.vmlinuz
 fi
 
