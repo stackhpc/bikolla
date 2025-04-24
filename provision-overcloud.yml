@@ -15,7 +15,7 @@
               - id: network0
                 type: ipv4
                 link: port-
-                ip_address: "192.168.122.42"
+                ip_address: "192.168.124.42"
                 netmask: "255.255.255.0"
                 network_id: network0
         instance_info:

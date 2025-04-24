@@ -8,4 +8,3 @@ kolla-ansible -vv -i /etc/kolla/inventory/all-in-one prechecks -e ansible_python
 kolla-ansible -vv -i /etc/kolla/inventory/all-in-one pull -e ansible_python_interpreter=~/bikolla/kolla-venv/bin/python 
 kolla-ansible -vv -i /etc/kolla/inventory/all-in-one deploy -e ansible_python_interpreter=~/bikolla/kolla-venv/bin/python
 kolla-ansible -vv -i /etc/kolla/inventory/all-in-one post-deploy -e ansible_python_interpreter=~/bikolla/kolla-venv/bin/python
-

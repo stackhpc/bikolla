@@ -15,17 +15,4 @@ sudo systemctl enable --now virtqemud
 sudo systemctl enable --now virtstoraged
 sudo systemctl enable --now virtnetworkd
 
-tmpfile=$(mktemp /tmp/sushy-domain.XXXXXX)
-sudo virt-install \
-   --name vbmc-node \
-   --ram 1024 \
-   --disk size=1 \
-   --vcpus 2 \
-   --os-type linux \
-   --os-variant ubuntu24.04 \
-   --graphics vnc \
-   --print-xml > $tmpfile
-sudo virsh define --file $tmpfile
-rm $tmpfile
-
 sushy-emulator -i 192.168.33.3 --config ~/bikolla/sushy.conf
