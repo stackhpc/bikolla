@@ -19,6 +19,6 @@
                 netmask: "255.255.255.0"
                 network_id: network0
         instance_info:
-          image_source: "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
-          image_checksum: "989151e612cde6876b0ef9fbc8051c0e22c32c59dd51cbac2b8691fbb79c399a"
+          image_source: "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img"
+          image_checksum: "071fceadf1ea57a388ff7a1ccb4127155d691a511f6a207b4c11b120563855e2"
           image_disk_format: "qcow2"
