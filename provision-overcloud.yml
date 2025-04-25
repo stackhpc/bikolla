@@ -6,16 +6,18 @@
         config_drive:
           meta_data:
             hostname: node1
+            public_keys:
+              default: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMzx+yurRSp1bDSae83+twZ8EdEiDg+tCzAMHSan0xdz kayobe@bikolla"
           network_data:
             links:
-              - id: port-
+              - id: port-8d850721-26a7-4886-950e-f2704179ba78
                 type: phy
-                ethernet_mac_address:
+                ethernet_mac_address: 52:54:00:80:8b:fa
             networks:
               - id: network0
                 type: ipv4
-                link: port-
-                ip_address: "192.168.124.42"
+                link: port-8d850721-26a7-4886-950e-f2704179ba78
+                ip_address: "192.168.124.63"
                 netmask: "255.255.255.0"
                 network_id: network0
         instance_info:
