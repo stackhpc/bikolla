@@ -3,6 +3,21 @@
 [control]
 localhost ansible_host=127.0.0.1
 
+[common:children]
+control
+
+[cron:children]
+common
+
+[kolla-logs:children]
+common
+
+[kolla-toolbox:children]
+common
+
+[fluentd:children]
+common
+
 [baremetal:children]
 control
 
@@ -13,6 +28,9 @@ control
 control
 
 [ironic:children]
+control
+
+[keystone:children]
 control
 
 # iSCSI
@@ -27,12 +45,11 @@ ironic
 ironic
 
 [ironic-inspector:children]
+
+[ironic-tftp:children]
 ironic
 
-[ironic-pxe:children]
-ironic
-
-[ironic-ipxe:children]
+[ironic-http:children]
 ironic
 
 # Referenced but not required.
